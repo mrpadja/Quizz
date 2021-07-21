@@ -1,0 +1,124 @@
+@font-face {
+    font-family: comic ;
+    src: url("/font/ComicNeue-Bold.ttf");
+}
+body{
+    margin: 0;
+}
+
+.spaceGame{
+    height: 100vh;
+    width: 100%;
+    background-image: url("/Assets/images/Qback.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GameCard{
+    width: 500px;
+    height: 550px;
+    border-radius: 7px;
+    background: radial-gradient(#faca52, #ffaf2f);
+    padding: 45px;
+    text-align: center;
+
+}
+
+.HeadButtons{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.HeadButtons button{
+    font-family:comic ;
+    font-size: 18px;
+    width: 183px;
+    height: 43px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.selected{
+    background:#3A559D;
+    color: white;
+}
+
+
+.logo{
+    margin: 26px 0 0 0;
+    /* border: 1px solid red; */
+}
+
+.userInfo{
+    color: white;
+    font-family: comic;
+    font-size: 24px;
+}
+
+.userName{
+    width: 457px;
+    height: 42px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 0 0 28px 0;
+    padding: 0 10px;
+}
+
+.start_game{
+    font-family:comic ;
+    font-size: 18px;
+    width: 183px;
+    height: 43px;
+    border: none;
+    color:white ;
+    background-color: #00B73E;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+
+
+.rank{
+    width: 498px;
+    height: 457px;
+    background-color: white;
+    margin: 50px 0 0 0;
+    border-radius: 6px;
+    display: none;
+
+}
+
+.bestRank{
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom: 1px solid #C9C9C9;
+    font-family: comic;
+}
+
+.circle{
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+    background-color:#FDB13A ;
+    color: white;
+    font-size: 14px;
+    font-family: comic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rank_Name{
+    text-align: left;
+    width: 65%;
+    font-size: 22px;
+    padding: 0 40px;
+}
