@@ -10,8 +10,13 @@ let Playerscore = document.querySelector('.scorenumber');
 let GoodAnswer =  new Audio('./Assets/music/correct.mp3');
 let BadAnswer =  new Audio('./Assets/music/wrong.mp3');
 let GameOverSound =  new Audio('./Assets/music/gameOver2.wav');
+let EndMessage = document.querySelector("#EndMessage");
 GameOverScore = document.querySelector('.score_End')
 
+
+
+timeout =''
+timeout2=''
 lives.innerHTML= 3;  
 Playerscore.innerHTML = 0;
 GameOverScore.innerHTML = 0;
@@ -35,7 +40,12 @@ function next(){
 }
 
 
-
+function myFunction() {
+    var copyText = document.getElementById("Link");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+  }
  
 
 
@@ -44,21 +54,48 @@ function next(){
 function gameOver(){
     GameOverSound.play();
     document.getElementById("Over").style.display = "flex";
-    document.getElementById("player").innerHTML = user;
+    if(user){
+        document.getElementById("player").innerHTML = user;
+    }
+    
     GameOverScore.innerHTML = Playerscore.innerHTML ;
+    
+    if(GameOverScore.innerHTML <51){
+        EndMessage.innerHTML =`<h3 class="first_Text" id="EndMessage">Désolé ${user} Votre score est de: </h3>`
+        GameOverScore.style.color = "red"
+    }
+    else if( GameOverScore.innerHTML >50){
+        EndMessage.innerHTML =`<h3 class="first_Text" id="EndMessage">Pas mal ${user} Votre score est de: </h3>`
+        GameOverScore.style.color = "yellow"
+    }
 
 }
 
-timeout =''
-timeout2=''
-
+ 
+function initBarcount(){
+    let TimeLeft = document.querySelector("#TimeLeft")
+    let Countdown = document.querySelector("#Countdown")
+    
+    startTimer = setInterval( function barCount(){
+        if (TimeLeft.clientWidth < Countdown.clientWidth){
+            TimeLeft.style.width = TimeLeft.clientWidth + 1 +"px";
+        }
+        else{
+            TimeLeft.style.width = Countdown.clientWidth + "px";
+            clearInterval(startTimer);
+        }
+    },20)
+}
 
 
 
 
  function start() {
-
-    console.log("TOPPPPPPPPPPPPPPP")
+    initBarcount()
+    // let time = document.createElement('div')
+    // time.classList.add("progress-bar")
+    // document.getElementById("gameCard").appendChild(time);
+    
     
     if(typeof avalaible.length !== 'undefined' && avalaible.length > 0 && avalaible){
         ShowImage.src = avalaible[key].imgUrl;
@@ -70,13 +107,21 @@ timeout2=''
         
        timeout = window.setTimeout(function(){
             if(Number(lives.innerHTML) > 0){
+
+            //****** call the function Next to remove the current question
                 next();  
                 key = Math.floor(Math.random() * avalaible.length);
-                lives.innerHTML--;  
+                lives.innerHTML--; 
+
+            //****** Reset the timer bar
+                TimeLeft.style.width = 0
+                clearInterval(startTimer); 
+            //****** Recall the Start function
                 start()
             }
         },10000);
         if(Number(lives.innerHTML) === 0){
+            TimeLeft.style.width = Countdown.clientWidth + "px";
             gameOver()
             window.clearTimeout(timeout)
         }
@@ -101,7 +146,7 @@ timeout2=''
             // check.style.display = "block"
                             let score = Number(Playerscore.innerHTML) + 10
                             GoodAnswer.play()
-                            console.log(score)
+                            // console.log(score)
                             Playerscore.innerHTML = score
                             
 
@@ -109,7 +154,9 @@ timeout2=''
                                 document.getElementById(String((avalaible[key].real+1))).classList.remove('correct');
                                     next();
                                     key = Math.floor(Math.random() * avalaible.length);
-                                    console.log('vraaaaaaaaaaaaaa')
+                                    // console.log('vraaaaaaaaaaaaaa')
+                                    TimeLeft.style.width = 0
+                                    clearInterval(startTimer); 
                                     start();
 
                             },1000);
@@ -124,11 +171,17 @@ timeout2=''
                     next();
                     key = Math.floor(Math.random() * avalaible.length);
                     console.log('vraaaaaaaaaaaaaa')
+                    TimeLeft.style.width = 0
+                    clearInterval(startTimer);
                     start();
 
             },1000);
         }
     window.clearTimeout(timeout)
   })
+
+
+
+
 
   window.onload= start()
