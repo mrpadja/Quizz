@@ -15,21 +15,21 @@
         <div class="GamePlayCard">
             <div class="game_Info">
                 <a href="index.html"><h3 class="quitter">Quitter X</h3></a>
-                <h3 class="score">Score: <span>90</span></h3>
-                <h3 class="score">3 <span class="heart">&#10084;</span></h3>
+                <h3 class="score">Score: <span class="scorenumber">90</span></h3>
+                <h3 class="score"> <span class="lives">3</span> <span class="heart">&#10084;</span></h3>
             </div>
 
             <div class="img_Holder">
-                <img id="Show" src="https://medias.cnnbrasil.com.br/jovenel-moise-durante-entrevista-coletiva-em-porto-principe.jpeg?format=JPEG&image=https://mediastorage.cnnbrasil.com.br/IMAGES/00/00/04/44906_D03A201B44705C95.jpg&width=804&height=452&resize=CROP" alt="">
+                <img id="Show" src="https://ak.picdn.net/shutterstock/videos/1039407446/thumb/1.jpg" alt="">
             </div>
 
             <h2 class="question">QUI EST-CE ?</h2>
 
             <div class="answers">
-                <button class="bad">Rep1 <span class="yes">&#10004;</span></button>
-                <button class="correct">Rep2 <span>&#10004;</span></button>
-                <button>Rep3 <span class="yes">&#10004;</span></button>
-                <button>Rep4 <span class="yes">&#10004;</span></button>
+                <button class="btn" id="1">Rep1 <span class="yes" id="yes">&#x2713;</span></button>
+                <button class="btn" id="2">Rep2 <span id="yes">&#x2713;</span></button>
+                <button class="btn" id="3">Rep3 <span class="yes" id="yes" >&#x2713;</span></button>
+                <button class="btn" id="4">Rep4 <span class="yes" id="yes">&#x2713;</span></button>
 
             </div>
 
@@ -38,9 +38,9 @@
     
     </section>
 
-    <section class="GameOver">
+    <section class="GameOver" id="Over">
         <div class="last_Message">
-            <h3 class="first_Text">Félicitations <span>Damas</span>  Votre score est de: </h3>
+            <h3 class="first_Text">Félicitations <span id="player">Damas</span>  Votre score est de: </h3>
             <h2 class="score_End">120</h2>
             <h3>partager QUIZ avec des amis </h3>
             <div class="share">
@@ -48,15 +48,15 @@
                 <img src="/Assets/images/copy 1.png" alt="">
             </div>
 
-            <button class="backHome">Accueil</button>
-            <button class="replay">Réjouer</button>
+            <button class="backHome" onclick="location.href ='index.html'">Accueil</button>
+            <button class="replay" onclick="location.href = 'gameplay.html'">Réjouer</button>
             
 
         </div>
 
     </section>
-    <script src="./JS/questions.js">
-    </script>
+    <script src="./JS/questions.js"></script>
     <script src="./JS/gameplay.js"></script>
+    <!-- <script src="./JS/home.js"></script> -->
 </body>
 </html>
