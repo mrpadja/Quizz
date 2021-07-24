@@ -52,6 +52,7 @@ function myFunction() {
 
 
 function gameOver(){
+    let user =document.querySelector('#user').value
     GameOverSound.play();
     document.getElementById("Over").style.display = "flex";
     if(user){
@@ -64,7 +65,7 @@ function gameOver(){
         EndMessage.innerHTML =`<h3 class="first_Text" id="EndMessage">Désolé ${user} Votre score est de: </h3>`
         GameOverScore.style.color = "red"
     }
-    else if( GameOverScore.innerHTML >50){
+    else if( GameOverScore.innerHTML >50 && GameOverScore.innerHTML<100 ){
         EndMessage.innerHTML =`<h3 class="first_Text" id="EndMessage">Pas mal ${user} Votre score est de: </h3>`
         GameOverScore.style.color = "yellow"
     }

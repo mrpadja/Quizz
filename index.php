@@ -1,3 +1,30 @@
+<?php
+
+require_once'db_connect.php';
+
+// SESSION
+session_start();
+
+// VERIFICATION
+
+if (!isset($_SESSION['logedIn']) && $_SESSION['logedIn'] != true){
+    header('Location: index.php');
+}
+
+
+if(isset($_POST['start'])){
+    if(isset($_SESSION['logedIn']) && $_SESSION['logedIn']){
+        header('Location: gameplay.php');
+    }else{
+        header('Location: login.php');
+    }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,10 +46,11 @@
 
             <div class="accueil" id="HomeSection" >
             <img class="logo" src="/Assets/images/logo.png" alt="">
-            <form action="" onsubmit="commencer(event)">
-                 <h2 class="userInfo">Ajouter un nom pour Commencer !!!</h2>
-                 <input class="userName" id="UserName" type="text" placeholder="Ex: Mr Padja" required> <br>
-                 <button class="start_game">Commencer</button>
+
+            <form action="<?php echo$_SERVER['PHP_SELF'];?>" method= "POST">
+                 <!-- <h2 class="userInfo">Ajouter un nom pour Commencer !!!</h2>
+                 <input class="userName" id="UserName" type="text" placeholder="Ex: Mr Padja" required> <br> -->
+                 <button class="start_game" type='submit' name='start'>Commencer</button>
             </form> 
             </div>
             

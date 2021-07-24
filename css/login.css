@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    background-image: url('/Assets/images/Qback.png');
+}
+
+.log_holder{
+    
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.log_cards{
+    width: 500px;
+    height: 550px;
+    border-radius: 7px;
+    background: radial-gradient(#faca52, #ffaf2f);
+    padding: 45px;
+    text-align: center;
+}
+
+.error{
+    color: red;
+}
+
+.success{
+    color: green;
+}
