@@ -1,3 +1,13 @@
+<?php
+
+// SESSION
+session_start();
+$Username = $_SESSION['username'];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,8 +75,11 @@
         </div>
 
     </section>
+
+    <input type="hidden" id='user' value="<?= $Username?>">
     <script src="./JS/questions.js"></script>
     <script src="./JS/gameplay.js"></script>
     <!-- <script src="./JS/home.js"></script> -->
+
 </body>
 </html>
