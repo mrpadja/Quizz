@@ -5,6 +5,11 @@ session_start();
 $Username = $_SESSION['username'];
 
 
+
+if (!isset($_SESSION['logedIn']) && $_SESSION['logedIn'] != true){
+    header('Location: index.php');
+}
+
 ?>
 
 
@@ -24,7 +29,7 @@ $Username = $_SESSION['username'];
 
         <div class="GamePlayCard" id="gameCard">
             <div class="game_Info">
-                <a href="index.html"><h3 class="quitter">Quitter X</h3></a>
+                <a href="index.php"><h3 class="quitter">Quitter X</h3></a>
                 <h3 class="score">Score: <span class="scorenumber">90</span></h3>
                 <h3 class="score"> <span class="lives">3</span> <span class="heart">&#10084;</span></h3>
 
@@ -68,8 +73,8 @@ $Username = $_SESSION['username'];
                 </a>
             </div>
 
-            <button class="backHome" onclick="location.href ='index.html'">Accueil</button>
-            <button class="replay" onclick="location.href = 'gameplay.html'">Réjouer</button>
+            <button class="backHome" onclick="location.href ='index.php'">Accueil</button>
+            <button class="replay" onclick="location.href = 'gameplay.php'">Réjouer</button>
             
 
         </div>
@@ -77,6 +82,7 @@ $Username = $_SESSION['username'];
     </section>
 
     <input type="hidden" id='user' value="<?= $Username?>">
+    
     <script src="./JS/questions.js"></script>
     <script src="./JS/gameplay.js"></script>
     <!-- <script src="./JS/home.js"></script> -->

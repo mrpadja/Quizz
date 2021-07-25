@@ -70,11 +70,11 @@ if (isset($_POST['btn_login'])){
 
                     header("Location: index.php");
                 }else{
-                    $erros[]="<li>Email and password missmatched<li>";
+                    $erros[]="Email and password missmatched";
                 }
 
         }else{
-            $erros[]="<li>User not existed!<li>";
+            $erros[]="User not existed!";
         }
     }
 
@@ -107,18 +107,23 @@ if (isset($_POST['btn_login'])){
                         echo "<h3 class='error'>$erro</h3>";
                     }
                 }
+                if(!empty($erros)){
+                    foreach($erros as $erro){
+                        echo "<h3 class='error'>$erro</h3>";
+                    }
+                }
             
             ?>
 
             <!-- CONNECT TO ACOUNT -->
             <form action="<?php echo$_SERVER['PHP_SELF'];?>" method= "POST">
-                <h3>Login</h3>
+                <h3 class='title'>Connecter</h3>
                 
-                <label for="email">Email:</label>
+                <label for="email">Email:</label><br>
                 <input type="email" name="email"><br>
-                <label for="password">password:</label>
+                <label for="password">password:</label><br>
                 <input type="password" name="password"><br>
-                <button type="submit" name='btn_login'>login</button>
+                <button type="submit" name='btn_login' class='btn1'>Connecter</button>
 
             </form>
 
@@ -126,14 +131,14 @@ if (isset($_POST['btn_login'])){
             
             <form action="<?php echo$_SERVER['PHP_SELF'];?>" class="create" method="POST"> 
                
-                <h3>Create Acount</h3>
-                <label for="name">Nom:</label>
+                <h3 class='title'>Créer un compte</h3>
+                <label for="name">Nom:</label><br>
                 <input type="text" name="name"><br>
-                <label for="email">Email:</label>
+                <label for="email">Email:</label><br>
                 <input type="email" name="email"><br>
-                <label for="password">password:</label>
+                <label for="password">password:</label><br>
                 <input type="password" name="password"><br>
-                <button type="submit" name="create">Create</button>
+                <button type="submit" name="create" class='btn2'>Créer</button>
 
             </form>
 

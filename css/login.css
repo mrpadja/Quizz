@@ -1,7 +1,13 @@
+@font-face {
+    font-family: comic ;
+    src: url("/font/ComicNeue-Bold.ttf");
+}
+
 body{
     margin: 0;
     background-image: url('/Assets/images/Qback.png');
 }
+
 
 .log_holder{
     
@@ -18,11 +24,53 @@ body{
     border-radius: 7px;
     background: radial-gradient(#faca52, #ffaf2f);
     padding: 45px;
-    text-align: center;
+    /* text-align: center; */
+    font-family: comic;
 }
+
+
+.title{
+    color: #293963;
+    font-size: 24px;
+    margin: 5px 0 20px 0;
+}
+
+
+
+.log_cards label{
+    margin: 0 0 0px 55px;
+}
+
+
+.log_cards input{
+    width: 75%;
+    height: 25px;
+    border: none;
+    border-radius: 3px;
+    margin: 0 0 15px 55px;
+}
+
+.log_cards button{
+    font-family:comic ;
+    font-size: 14px;
+    width: 130px;
+    height: 33px;
+    border: none;
+    color:white ;
+    background-color: #00B73E;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.1s;
+    margin: 20px 0 20px 34%;
+}
+
+
+
 
 .error{
     color: red;
+    margin: 0  0 0 30%  ;
+    font-size: 15px;
 }
 
 .success{

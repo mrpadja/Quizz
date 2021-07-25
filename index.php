@@ -4,12 +4,10 @@ require_once'db_connect.php';
 
 // SESSION
 session_start();
-
-// VERIFICATION
-
-if (!isset($_SESSION['logedIn']) && $_SESSION['logedIn'] != true){
-    header('Location: index.php');
-}
+$Conected = true;
+if(!isset($_SESSION['logedIn'])){
+        $Conected = false;      
+};
 
 
 if(isset($_POST['start'])){
@@ -45,13 +43,16 @@ if(isset($_POST['start'])){
 
 
             <div class="accueil" id="HomeSection" >
-            <img class="logo" src="/Assets/images/logo.png" alt="">
+            <img class="logo" src="/Assets/images/myquizz.png" alt="">
 
             <form action="<?php echo$_SERVER['PHP_SELF'];?>" method= "POST">
                  <!-- <h2 class="userInfo">Ajouter un nom pour Commencer !!!</h2>
                  <input class="userName" id="UserName" type="text" placeholder="Ex: Mr Padja" required> <br> -->
                  <button class="start_game" type='submit' name='start'>Commencer</button>
             </form> 
+             <a id="disconnect" href="logout.php">
+                 <img src="/Assets/images/logout.png" alt="">
+                 Déconnecter</a>
             </div>
             
             
@@ -74,7 +75,7 @@ if(isset($_POST['start'])){
         </div>
     
     </section>
-
+    <input type="hidden" id='isconected' value="<?= $Conected?>">
     <script src="/JS/home.js"></script>
 </body>
 </html>
