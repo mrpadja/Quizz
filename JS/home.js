@@ -1,4 +1,12 @@
 let Username= document.querySelector("#UserName");
+let isconected = document.querySelector('#isconected');
+let disconnect = document.querySelector('#disconnect');
+
+
+if(isconected.value){
+    document.getElementById("disconnect").style.display = "block"
+}
+
 
 
 function OpenRank(){

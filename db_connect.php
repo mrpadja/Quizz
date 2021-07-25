@@ -2,7 +2,7 @@
 //CONNECTION TO DATABASE
 $servername ="localhost";
 $username = "root";
-$password ="";
+$password ="root";
 $db_name ="quizz";
 
 $connect = mysqli_connect($servername, $username, $password, $db_name);

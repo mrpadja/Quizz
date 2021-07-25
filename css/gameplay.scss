@@ -15,6 +15,8 @@ body{
     align-items: center;
 }
 
+
+
 .GamePlayCard{
     font-family: comic;
     width: 500px;
@@ -228,3 +230,110 @@ body{
 /********* STOP GAME **********/
 
 
+
+
+// PHONE
+
+@media only screen and (max-width: 600px) {
+    
+
+    .spaceGame, .GamePlayCard{
+        height: 100vh;
+        width: 100%; 
+    }
+
+    .GamePlayCard{
+        padding: 10% 0 0 0;
+    }
+
+
+
+    .img_Holder{
+        width: 90%;
+        height: 27%;
+        margin: 7% 0 6% 0;
+    }
+
+    .img_Holder img{
+        width: 95%;
+        height: 90%;
+        border-radius:2px ;
+        object-fit: cover;
+        transform: rotate(-1deg);
+    }
+
+    .question{
+        margin: 4% 0;
+    }
+
+    .answers button{
+        width:90%;
+        margin: 0 0 6% 0;
+    }
+
+    .answers button:hover{
+        width: 90% ;
+        
+    }
+
+
+    .last_Message{
+        width: 90%;
+        height: 50%;
+        border-radius: 9px;
+        padding: 10px;
+    }
+
+    
+    .first_Text{
+        
+        font-size: 18px;
+    }
+    
+    .score_End{
+        margin: 5%;
+        font-size: 80px;
+        color: green;
+    }
+    
+    .share{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0 0 ;
+    }
+    
+    .link{
+        background-color: rgb(243, 243, 243);
+        height: 29px;
+        width: 80%; 
+        outline: none;
+        border: none;  
+        border-radius: 5px;
+        padding: 2px 0 0 15px;
+        margin-right: 10px;
+        
+    }
+    
+    .share a img{
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+    }
+    
+    .last_Message img{
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+    }
+    
+    .GameOver button{
+        font-size: 18px;
+        width: 100px;
+        height: 40px;
+        margin: 10% 0 0 0;
+      
+    }
+
+
+}

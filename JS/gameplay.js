@@ -28,7 +28,6 @@ user = window.localStorage.getItem('User');
 
 
 
-
 function next(){
     let q = key;
     if(avalaible.length > 0){
