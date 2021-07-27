@@ -29,7 +29,7 @@ if (!isset($_SESSION['logedIn']) && $_SESSION['logedIn'] != true){
 
         <div class="GamePlayCard" id="gameCard">
             <div class="game_Info">
-                <a href="index.php"><h3 class="quitter">Quitter X</h3></a>
+                <a href="index.html"><h3 class="quitter">Quitter X</h3></a>
                 <h3 class="score">Score: <span class="scorenumber">90</span></h3>
                 <h3 class="score"> <span class="lives">3</span> <span class="heart">&#10084;</span></h3>
 
@@ -73,19 +73,33 @@ if (!isset($_SESSION['logedIn']) && $_SESSION['logedIn'] != true){
                 </a>
             </div>
 
-            <button class="backHome" onclick="location.href ='index.php'">Accueil</button>
-            <button class="replay" onclick="location.href = 'gameplay.php'">Réjouer</button>
+            <button class="backHome" onclick="location.href ='index.html'">Accueil</button>
+            <button class="replay" onclick="location.href = 'gameplay.html'">Réjouer</button>
             
 
         </div>
 
     </section>
 
-    <input type="hidden" id='user' value="<?= $Username?>">
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let userData = localStorage.getItem('loginData')
+            console.log('sjvjdvsjdbv')
+            if (!userData){
+                
+                window.location.href = 'index.html'
+            }}) 
+        
+    </script>
     
     <script src="./JS/questions.js"></script>
     <script src="./JS/gameplay.js"></script>
     <!-- <script src="./JS/home.js"></script> -->
+   
 
 </body>
 </html>

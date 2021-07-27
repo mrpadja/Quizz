@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="./css/Addquestion.css">
     
     <title>AdminGeneral</title>
 </head>
@@ -31,55 +31,30 @@
     <a href="#" class="btn-expand-collapse"><span class="glyphicon glyphicon-menu-left"></span></a>
     <ul class="navbar-primary-menu">
       <li>
-        <a href="#"><span class="glyphicon glyphicon-list-alt general"></span><span class="nav-label">Dashboard</span></a>
-        <a href="Addquestion.html"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Add Question</span></a>
+        <a href="admin.html"><span class="glyphicon glyphicon-list-alt general"></span><span class="nav-label">Dashboard</span></a>
+        <a href="#"><span class="glyphicon glyphicon-envelope"></span><span class="nav-label">Add Question</span></a>
         <a href="Allquestions.html"><span class="glyphicon glyphicon-cog"></span><span class="nav-label">All questions</span></a>
         <a href="#"><span class="glyphicon glyphicon-film"></span><span class="nav-label">Users</span></a>
-        <a href="index.html "><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Go to website</span></a>
+        <a href="index.html"><span class="glyphicon glyphicon-calendar"></span><span class="nav-label">Go to website</span></a>
       </li>
     </ul>
   </nav>
 
   <div class="main-content">
 
-    
-  
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <form action="">
-        <input type="file" id="imgInp"> <br>
+    <form action="" onsubmit="addQuestion(event)" id='form_questions'>
+        <input type="file" id="imgInp" name="img"> <br>
         <img id="blah" src="#" alt="your image" /><br>
 
-        Answer 1: <input type="text"> <br>
-        Answer 2: <input type="text"> <br>
-        Answer 3: <input type="text"> <br>
-        Answer 4: <input type="text"> <br>
-        Correct Answer: <input type="text"> <br>
+        Answer 1: <input type="text" id="A1" name="a1" required> <br>
+        Answer 2: <input type="text" id="A2" name="a2" required> <br>
+        Answer 3: <input type="text" id="A3" name="a3" required> <br>
+        Answer 4: <input type="text" id="A4" name="a4" required> <br>
+        Correct Answer: <input type="text" id="correct" name="correct_a"> <br>
         <button type="submit">Add Question</button>
     </form>
-
+  
+  </div>
 
 
     
@@ -102,6 +77,8 @@
         $("#imgInp").change(function(){
             readURL(this);
         });
-    </script> -->
+    </script> 
+
+    <script src="/JS/addquestion.js"></script>
 </body>
 </html>

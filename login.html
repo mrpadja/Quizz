@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <section class="log_holder" >
+        <div class="log_cards">
+
+
+            <!-- CONNECT TO ACOUNT -->
+            <form action="" onsubmit="login(event)">
+                <h3 class='title'>Connecter</h3>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="upEmail"><br>
+
+                <label for="password">password:</label><br>
+                <input type="password" name="password" id="upPassword"><br>
+
+                <button type="submit" name='btn_login' class='btn1'>Connecter</button>
+
+            </form>
+
+            <!-- CREATE ACCOUNT FORM -->
+            
+            <form action="" class="create" onsubmit="createUser(event)"> 
+               
+                <h3 class='title'>Créer un compte</h3>
+
+                <label for="name">Nom:</label><br>
+                <input type="text" name="name" id="name" required><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" required><br>
+
+                <label for="password">password:</label><br>
+                <input type="password" name="password" id="password" required><br>
+
+                <button type="submit" name="create" class='btn2'>Créer</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/JS/login.js"></script>
+
+    
+</body>
+</html>
