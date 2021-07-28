@@ -21,7 +21,7 @@ html body{
     height: 550px;
     border-radius: 7px;
     background: radial-gradient(#faca52, #ffaf2f);
-    padding: 15px;
+    padding: 50px;
     text-align: center;
 
 }
@@ -39,6 +39,7 @@ html body{
     border-radius: 4px;
     cursor: pointer;
     margin: 10px 0 0 0 ;
+    font-family: comic;
 }
 
 .active{

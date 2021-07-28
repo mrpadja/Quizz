@@ -66,7 +66,7 @@ function gameOver(){
 
         let data = {
             user_id:userData.user.id ,
-            score: Number( Playerscore.innerHTML)
+            score: Number(Playerscore.innerHTML)
         }
 
         $.ajax({

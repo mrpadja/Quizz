@@ -82,3 +82,14 @@ button:hover{
     background-image: linear-gradient(#006dc0, #015091);
     box-shadow: 2px 4px 9px #0000007c;
 }
+
+.GameCard a{
+    color: white;
+    text-decoration: none;
+    font-family: comic;
+    cursor: pointer;
+}
+
+.GameCard a:hover{
+    color: rgb(0, 81, 255);
+}

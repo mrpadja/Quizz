@@ -91,17 +91,6 @@ body{
     background-color: #14c750;
 }
 
-.GameCard a{
-    color: white;
-    text-decoration: none;
-    font-family: comic;
-}
-
-.GameCard a:hover{
-    color: rgb(0, 81, 255);
-}
-
-
 /************************ Ranking part ************************/
 
 .rank{

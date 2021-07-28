@@ -42,22 +42,7 @@ function start(){
 }
 
 
-function logout(){
-    $.ajax({
-        method: "POST",
-        url: "https://quizzapi.xyz/api/logout",
-        success:function(response){
-            localStorage.removeItem('loginData')
-            window.location.href = 'index.html'
-        },
-        error:function(){
 
-        },
-
-    })
-    localStorage.removeItem('loginData')
-    window.location.href = 'index.html'
-}
 
 
 function OpenRank(){

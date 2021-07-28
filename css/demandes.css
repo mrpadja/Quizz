@@ -3,7 +3,11 @@
     font-family: comic ;
     src: url("/font/ComicNeue-Bold.ttf");
 }
-html body{
+
+html,body {
+    box-sizing: border-box;
+  }
+body{
     margin: 0;
 }
 
@@ -16,20 +20,22 @@ html body{
     align-items: center;
 }
 
-.GameCard{
+.GameCardD{
     width: 500px;
     height: 550px;
     border-radius: 7px;
     background: radial-gradient(#faca52, #ffaf2f);
-    padding: 15px;
+    padding: 0px;
     text-align: center;
-
+    padding: 50px;
+    
 }
 
 .head_btns{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .head_btns button{
@@ -39,6 +45,7 @@ html body{
     border-radius: 4px;
     cursor: pointer;
     margin: 10px 0 0 0 ;
+    font-family: comic;
 }
 
 .active{
