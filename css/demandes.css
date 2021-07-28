@@ -1,0 +1,114 @@
+
+@font-face {
+    font-family: comic ;
+    src: url("/font/ComicNeue-Bold.ttf");
+}
+html body{
+    margin: 0;
+}
+
+.spaceGame{
+    height: 100vh;
+    width: 100%;
+    background-image: url("/Assets/images/Qback.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GameCard{
+    width: 500px;
+    height: 550px;
+    border-radius: 7px;
+    background: radial-gradient(#faca52, #ffaf2f);
+    padding: 15px;
+    text-align: center;
+
+}
+
+.head_btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head_btns button{
+    height: 43px;
+    width: 150px;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0 0 0 ;
+}
+
+.active{
+    color: white;
+    background-color: #235F95;
+}
+
+
+.rankDemand{
+    width: 100%;
+    height: 390px;
+    background-color: white;
+    margin: 50px 0 0 0;
+    border-radius: 6px;
+    /* display: flex; */
+    overflow-y: auto;
+    color: white;
+    font-family: comic;
+}
+
+/* width */
+.rank::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3A559D;
+  border-radius: 8px; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #203368; 
+}
+
+.demand_Card, .ask_Card{
+   
+    height: 50px;
+    background-color:#006dcc ;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 23px;
+}
+
+.demand_Card h3, .ask_Card h3{
+    /* border:1px solid red; */
+    width: 140px;
+}
+
+.demand_action button{
+    color: white;
+    height: 29px;
+    width: 69px;
+    border:none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.demand_action .Demand_yes{
+    background-color:#009130 ;
+}
+
+.demand_action .Demand_no{
+    background-color:#db0000;
+}

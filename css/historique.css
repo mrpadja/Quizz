@@ -1,0 +1,99 @@
+
+@font-face {
+    font-family: comic ;
+    src: url("/font/ComicNeue-Bold.ttf");
+}
+html body{
+    margin: 0;
+}
+
+.spaceGame{
+    height: 100vh;
+    width: 100%;
+    background-image: url("/Assets/images/Qback.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.GameCard{
+    width: 500px;
+    height: 550px;
+    border-radius: 7px;
+    background: radial-gradient(#faca52, #ffaf2f);
+    padding: 15px;
+    text-align: center;
+
+}
+
+.head_btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head_btns button{
+    font-family: comic;
+    height: 43px;
+    width: 150px;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px 0 0 0 ;
+}
+
+.active{
+    color: white;
+    background-color: #235F95;
+}
+
+
+.rank_historik{
+    width: 100%;
+    height: 390px;
+    background-color: white;
+    margin: 50px 0 0 0;
+    border-radius: 6px;
+    /* display: flex; */
+    overflow-y: auto;
+
+}
+
+/* width */
+.rank::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3A559D;
+  border-radius: 8px; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #203368; 
+}
+
+
+.lost, .win{
+    font-family: comic;
+    font-size: 13px;
+    color: white;
+    height: 50px;
+    background-color: #a70000 ;
+    border-bottom: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 23px;
+}
+
+.win{
+    background-color: #007e2a;
+}

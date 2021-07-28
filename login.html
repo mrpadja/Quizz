@@ -12,22 +12,28 @@
     <section class="log_holder" >
         <div class="log_cards">
 
-
+            <div class="cardlogHead"> 
+                <h4 id="messageLogin" class="messagelogin"></h4>
+            </div>
+            
             <!-- CONNECT TO ACOUNT -->
             <form action="" onsubmit="login(event)">
                 <h3 class='title'>Connecter</h3>
                 
                 <label for="email">Email:</label><br>
-                <input type="email" name="email" id="upEmail"><br>
+                <input type="email" name="email" id="upEmail" required><br>
 
                 <label for="password">password:</label><br>
-                <input type="password" name="password" id="upPassword"><br>
+                <input type="password" name="password" id="upPassword" required><br>
 
                 <button type="submit" name='btn_login' class='btn1'>Connecter</button>
 
             </form>
 
             <!-- CREATE ACCOUNT FORM -->
+            <div class="cardlogHead"> 
+                <h4 id="messageLogin2" class="messagelogin"></h4>
+            </div>
             
             <form action="" class="create" onsubmit="createUser(event)"> 
                

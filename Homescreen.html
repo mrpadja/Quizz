@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/homescreen.css">
+    <title>Home</title>
+</head>
+<body>
+
+    <div class="spaceGame">
+        <div class="GameCard">
+            <div class="home_head">
+                <h2 id="HomeUsername">Damas Serius</h2>
+                <img src="/Assets/images/notif.png" alt="">
+            </div>
+            <h3>LEVEL <span >1</span></h3>
+            <h3>Meilleurs Scores: <span id="HomeUserScore">200</span> </h3>
+            <h3 class="victories">Victories: <span>20</span></h3>
+
+            <button class="solo_btn" onclick= "window.location.href ='gameplay.html';">SOLO <img src="/Assets/images/soloimg.png" alt=""></button>
+            <button class="sbattle_btn" onclick= "window.location.href ='demandes.html';">BATTLE <img src="/Assets/images/bttleIcon.png" alt=""></button>
+
+        </div>
+
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let userData = localStorage.getItem('loginData')
+            console.log('sjvjdvsjdbv')
+            if (!userData){
+                
+                window.location.href = 'index.html'
+            }}) 
+        
+    </script>
+    <script src="/JS/Homescreen.js"></script>
+    
+</body>
+</html>

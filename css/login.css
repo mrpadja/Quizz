@@ -31,7 +31,7 @@ body{
 
 .title{
     color: #293963;
-    font-size: 24px;
+    font-size: 20px;
     margin: 5px 0 20px 0;
 }
 
@@ -64,15 +64,13 @@ body{
     margin: 20px 0 20px 34%;
 }
 
-
-
-
-.error{
-    color: red;
-    margin: 0  0 0 30%  ;
-    font-size: 15px;
+.cardlogHead{
+    width: 100%;
+    text-align: center;
 }
 
-.success{
-    color: green;
+.messagelogin{
+    margin:0 0 17px;
+    font-size: 15px;
+    color: red;
 }

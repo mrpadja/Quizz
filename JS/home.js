@@ -1,3 +1,6 @@
+
+
+// intFrameHeight = window.innerHeight;
 let Username= document.querySelector("#UserName");
 let isconected = document.querySelector('#isconected');
 let disconnect = document.querySelector('#disconnect');
@@ -10,6 +13,14 @@ if (userData){
         document.getElementById("disconnect").style.display = "block"
     }
 }
+
+
+
+
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.document.getelementbyid('#spaceGame').style.setProperty('--vh', `${vh}px`);
+
 
 
 
