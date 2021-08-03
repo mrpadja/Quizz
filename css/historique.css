@@ -60,7 +60,7 @@ html body{
 }
 
 /* width */
-.rank::-webkit-scrollbar {
+.rank_historik::-webkit-scrollbar {
   width: 10px;
 }
 
@@ -96,4 +96,54 @@ html body{
 
 .win{
     background-color: #007e2a;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    body{
+        box-sizing: border-box;
+    }
+   
+    .spaceGame{
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+        
+    }
+
+    .GameCard{
+        padding: 4% 2% 0 2%;
+        border-radius: 0;
+    }
+
+    .GameCard img{
+        width: 40px;
+    }
+
+    .head_btns button{
+        height: 38px;
+        width: 100px;
+        border:none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 10px 0 15% 0 ;
+        font-family: comic;
+    }
+
+   
+
+    .rank_historik{
+        width: 100%;
+        height:65%;
+        background-color: white;
+        margin: 0px 0 0 0;
+        border-radius: 6px;
+        /* display: flex; */
+        overflow-y: auto;
+    
+    }
+
+    .level_names{
+        padding: 0 13px;
+    }
 }

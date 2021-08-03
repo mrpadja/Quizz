@@ -1,17 +1,3 @@
-<?php
-
-// SESSION
-session_start();
-$Username = $_SESSION['username'];
-
-
-
-if (!isset($_SESSION['logedIn']) && $_SESSION['logedIn'] != true){
-    header('Location: index.php');
-}
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +15,7 @@ if (!isset($_SESSION['logedIn']) && $_SESSION['logedIn'] != true){
 
         <div class="GamePlayCard" id="gameCard">
             <div class="game_Info">
-                <a href="Homescreen.html"><h3 class="quitter">Quitter X</h3></a>
+                <h3 class="quitter" onclick="quit()">Quitter X</h3>
                 <h3 class="score">Score: <span class="scorenumber">90</span></h3>
                 <h3 class="score"> <span class="lives">3</span> <span class="heart">&#10084;</span></h3>
 
@@ -82,23 +68,39 @@ if (!isset($_SESSION['logedIn']) && $_SESSION['logedIn'] != true){
     </section>
 
 
-
+    <input type="hidden" value="0" id="battleisOn">
+    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
+            console.log('chegou')
+            let batlle = document.getElementById("battleisOn")
+          
+            let batay =  localStorage.getItem('battle')
+
+            if(batay == 'true'){
+                batlle.value = 1
+            }
+
+            console.log('batay la',batlle.value)
+
+            
+
             let userData = localStorage.getItem('loginData')
-            console.log('sjvjdvsjdbv')
+           // console.log('sjvjdvsjdbv')
             if (!userData){
                 
                 window.location.href = 'index.html'
             }}) 
         
     </script>
-    
+
+    <!-- <script src="/JS/choose.js"></script> -->
     <script src="./JS/questions.js"></script>
     <script src="./JS/gameplay.js"></script>
-    <!-- <script src="./JS/home.js"></script> -->
+
+    
    
 
 </body>

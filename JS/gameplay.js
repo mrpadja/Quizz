@@ -14,8 +14,9 @@ let nextSound =  new Audio('./Assets/music/next.mp3');
 let GameOverSound =  new Audio('./Assets/music/gameOver2.wav');
 let EndMessage = document.querySelector("#EndMessage");
 GameOverScore = document.querySelector('.score_End')
+let ifBattle = document.querySelector('#battleisOn')
 
-
+//console.log(ifBattle.value)
 
 timeout =''
 timeout2=''
@@ -56,17 +57,29 @@ function myFunction() {
   }
  
 
+  function quit(){
+    if(localStorage.getItem('battle')){
+        localStorage.removeItem("battle")
+    }
+    window.location.href = 'Homescreen.html'
+  }
 
 
 
 function gameOver(){
     let userData = localStorage.getItem('loginData')
+    let adversDataId = localStorage.getItem('battle_id')
+    
     if (userData){
         userData = JSON.parse(userData)
 
         let data = {
             user_id:userData.user.id ,
-            score: Number(Playerscore.innerHTML)
+            score: Number(Playerscore.innerHTML),
+        }
+
+        if(localStorage.getItem('battle') == 'true'){
+            data.duel_id =adversDataId ;
         }
 
         $.ajax({
@@ -75,6 +88,12 @@ function gameOver(){
             data,
             success:function(response){
                 console.log(response)
+                 
+                if(localStorage.getItem('battle')){
+                    localStorage.removeItem("battle")
+                    localStorage.removeItem("battle_id")
+                }
+                
             },
             error:function(){
     

@@ -124,6 +124,8 @@ body{
       width: 100%;
       height: 540px;
       border: 1px solid red;
+      overflow-y: auto;
+      position: relative;
   }
 
   .main-content .table_head{
@@ -135,6 +137,8 @@ body{
       height: 50px;
       background-color: rgb(83, 83, 83);
       padding: 0 10px;
+      position: sticky;
+      top:0;
   }
 
   .main-content .table_head h3{
@@ -151,9 +155,13 @@ body{
     padding: 0 10px;
   }
 
+  .main-content .table .question_listed:hover{
+    background-color: rgb(32, 32, 32) ;
+  }
+
   .table .question_listed img{
-      width: 75px;
-      height: 60px;
+      width: 70px;
+      height: 50px;
       object-fit: cover ;
   }
 

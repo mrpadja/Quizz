@@ -50,6 +50,7 @@ body{
     margin: 0 0 15px 55px;
 }
 
+
 .log_cards button{
     font-family:comic ;
     font-size: 14px;
@@ -74,3 +75,27 @@ body{
     font-size: 15px;
     color: red;
 }
+
+
+
+@media only screen and (max-width: 600px) {
+    body{
+        box-sizing: border-box;
+    }
+   
+    .spaceGame{
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+        
+    }
+
+    .log_cards{
+        padding: 4% 2% 0 2%;
+        border-radius: 0;
+        height: 570px;
+    }
+
+    .log_cards label{
+        margin: 0 0 0px 40px;
+    }
+}   
