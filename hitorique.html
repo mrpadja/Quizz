@@ -19,15 +19,8 @@
                 <button onclick= "window.location.href ='chooseadversary.html';" >Choisir Adversaire</button>
             </div>
 
-            <div class="rank_historik">
-                <div class="lost">
-                    <h3>Vous avez perdu contre <span>Jod</span> </h3>
-                    <h3><span>300</span> / <span>200</span> </h3>
-                </div>
-                <div class="win">
-                    <h3>Vous avez gagné  contre <span>Jod</span> </h3>
-                    <h3><span>300</span> / <span>200</span> </h3>
-                </div>
+            <div class="rank_historik" id="rank_historik">
+            
 
             </div>
             
@@ -38,6 +31,20 @@
 
 
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            let userData = localStorage.getItem('loginData')
+            
+            if (!userData){
+                
+                window.location.href = 'index.html'
+            }}) 
+        
+    </script>
+
+    <script src="/JS/historique.js"></script>
     
 </body>
 </html>

@@ -46,6 +46,7 @@ html body{
 
 .GameCard .victories{
     margin: 0 0 100px 0;
+    opacity: 0;
 }
 
 .GameCard .solo_btn, .battle_btn{

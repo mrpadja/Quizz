@@ -15,6 +15,7 @@ let GameOverSound =  new Audio('./Assets/music/gameOver2.wav');
 let EndMessage = document.querySelector("#EndMessage");
 GameOverScore = document.querySelector('.score_End')
 let ifBattle = document.querySelector('#battleisOn')
+let userData = JSON.parse( localStorage.getItem('loginData'))
 
 //console.log(ifBattle.value)
 
@@ -28,6 +29,9 @@ GameOverScore.innerHTML = 0;
 $.ajax({
     method: "GET",
     url: "https://quizzapi.xyz/api/questions",
+    headers: {
+        "Authorization": 'Bearer '+userData.access_token
+        },
     success:function(response){
         localStorage.setItem('avalaible', JSON.stringify(response))
     },
@@ -58,17 +62,9 @@ function myFunction() {
  
 
   function quit(){
-    if(localStorage.getItem('battle')){
-        localStorage.removeItem("battle")
-    }
-    window.location.href = 'Homescreen.html'
-  }
-
-
-
-function gameOver(){
     let userData = localStorage.getItem('loginData')
     let adversDataId = localStorage.getItem('battle_id')
+    let battleid = localStorage.getItem('battleId')
     
     if (userData){
         userData = JSON.parse(userData)
@@ -79,12 +75,80 @@ function gameOver(){
         }
 
         if(localStorage.getItem('battle') == 'true'){
-            data.duel_id =adversDataId ;
+            if(adversDataId){
+                data.duel_id = adversDataId ;
+            }else if(battleid){
+                console.log("li rive laaa")
+                data.duel_id = battleid
+            }
         }
+
 
         $.ajax({
             method: "POST",
             url: "https://quizzapi.xyz/api/scores",
+            headers: {
+                "Authorization": 'Bearer '+userData.access_token
+                },
+            data,
+            success:function(response){
+                console.log(response)
+                 
+                if(localStorage.getItem('battle')){
+                    localStorage.removeItem("battle")
+                    localStorage.removeItem("battle_id")
+                }
+                
+            },
+            error:function(){
+    
+            },
+    
+        })
+
+
+    }
+    if(localStorage.getItem('battle')){
+        localStorage.removeItem("battle")
+    }
+    setTimeout(function(){
+        window.location.href = 'Homescreen.html'
+    }, 1000);
+  }
+
+
+
+
+
+function gameOver(){
+    let userData = localStorage.getItem('loginData')
+    let adversDataId = localStorage.getItem('battle_id')
+    let battleid = localStorage.getItem('battleId')
+    
+    if (userData){
+        userData = JSON.parse(userData)
+
+        let data = {
+            user_id:userData.user.id ,
+            score: Number(Playerscore.innerHTML),
+        }
+
+        if(localStorage.getItem('battle') == 'true'){
+            if(adversDataId){
+                data.duel_id = adversDataId ;
+            }else if(battleid){
+                console.log("li rive laaa")
+                data.duel_id = battleid
+            }
+        }
+
+
+        $.ajax({
+            method: "POST",
+            url: "https://quizzapi.xyz/api/scores",
+            headers: {
+                "Authorization": 'Bearer '+userData.access_token
+                },
             data,
             success:function(response){
                 console.log(response)

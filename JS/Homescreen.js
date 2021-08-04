@@ -1,6 +1,6 @@
 let userData = localStorage.getItem('loginData')
 let username = document.querySelector('#HomeUsername')
-let highScore = document.querySelector('#HomeUsername')
+let highScore = document.querySelector('#HomeUserScore')
     
 if (userData){
     userData = JSON.parse(userData)
@@ -8,8 +8,13 @@ if (userData){
 
     $.ajax({
         method: "GET",
-        url: "https://quizzapi.xyz/api/scores",
+        url: "https://quizzapi.xyz/api/users/score",
+        headers: {
+            "Authorization": 'Bearer '+ userData.access_token
+        },
         success:function(response){
+            console.log(response)
+            highScore.innerHTML = response.score
             
         },
         error:function(){
